@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +8,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var sun = document.getElementById('sun');
+      var moon = document.getElementById('moon');
+      if (!sun || !moon) return;
+      var sunSpeed = 0.12;
+      var moonSpeed = 0.08;
+
+      function onScroll() {
+        var y = window.scrollY || window.pageYOffset;
+        sun.style.transform = 'translateY(calc(-50% + ' + (y * sunSpeed).toFixed(2) + 'px))';
+        moon.style.transform = 'translateY(calc(-50% + ' + (y * moonSpeed).toFixed(2) + 'px))';
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -28,12 +46,17 @@
   </header>
 
   <main>
-    <section class="section">
+    <div class="side-characters" aria-hidden="true">
+      <img id="sun" src="personal_project/sun-na.webp" alt="Sun character" />
+      <img id="moon" src="personal_project/moon-na.webp" alt="Moon character" />
+    </div>
+
+    <section class="section section-wide">
       <div class="project-banner">
         <div>
           <div class="eyebrow">Personal Project</div>
           <h1>SisQuiz</h1>
-          <p class="section-lead">Interaktive Quiz-Welt, die klassische Trivia mit spielerischen Challenges verbindet und durch eigene Bildwelten sowie Soundscapes verstärkt wird.</p>
+          <p class="section-lead">Interaktive Quiz-Welt, die ich gemeinsam mit meiner Schwester entwickelt habe – unterstützt durch verschiedene KI-Tools. Das Projekt ist in der Beta-Phase und wurde von uns unter dem Dach von NumericalArt auf dem WebSummit 2025 in Lissabon vorgestellt.</p>
         </div>
         <div class="project-meta">
           <span class="pill accent">Interactive quiz</span>
@@ -61,16 +84,12 @@
           <img src="personal_project/question-session-3.webp" alt="Fragenansicht mit Illustration" />
           <figcaption>Fragen kombiniert mit Illustrationen für Kontext und Stimmung.</figcaption>
         </figure>
-        <figure class="gallery-card">
-          <img src="personal_project/play-session-4.webp" alt="Endscreen mit Zusammenfassung" />
-          <figcaption>Abschluss-Screen für Auswertung und Call-to-Action.</figcaption>
-        </figure>
       </div>
 
       <div class="panel">
         <h3>Look & Feel</h3>
-        <p>Schwarzer Hintergrund, weiße Typo und der Akzent #73D4A9 rahmen die Illustrationen und Screens ein. Klare Karten, weiche Radien und dezente Linien lassen den Content im Fokus.</p>
-        <p class="note">Charaktere Sun & Moon begleiten die App als wiederkehrende Begleiter und bieten Spielraum für Übergänge, Animationen oder Tooltips.</p>
+        <p>Alles original von mir und meiner Schwester gestaltet, inklusive Bilder, Musik und Sound-Design.</p>
+        <p class="note">Die Welt dreht sich um Sonne und Mond – personifizierte Versionen von uns beiden, die als wiederkehrende Begleiter und Erzähler durch die Experience führen.</p>
       </div>
     </section>
   </main>

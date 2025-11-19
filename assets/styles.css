@@ -1,0 +1,139 @@
+:root {
+  --bg: #0a0a0a;
+  --text: #f5f5f5;
+  --accent: #73d4a9;
+  --muted: #9aa3ab;
+  --card: #101214;
+  --border: #1c1f22;
+  font-family: 'DM Sans', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(10, 10, 10, 0.75);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), #4ea57f);
+  display: grid;
+  place-items: center;
+  color: #0a0a0a;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+nav ul {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  align-items: center;
+}
+
+nav a {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: 150ms ease;
+  font-weight: 600;
+}
+
+nav a:hover,
+nav a:focus-visible,
+nav a.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(115, 212, 169, 0.08);
+}
+
+main {
+  flex: 1;
+}
+
+.section {
+  max-width: 960px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.section h1 {
+  font-size: clamp(32px, 4vw, 44px);
+  margin-bottom: 12px;
+}
+
+.section p {
+  color: var(--muted);
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+.placeholder-box {
+  margin-top: 32px;
+  padding: 36px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  color: var(--muted);
+  font-weight: 600;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

@@ -117,6 +117,12 @@ main {
   padding-top: 40px;
 }
 
+.section-cv {
+  align-items: stretch;
+  text-align: left;
+  gap: 28px;
+}
+
 .section h1 {
   font-size: clamp(32px, 4vw, 44px);
   margin-bottom: 12px;
@@ -136,6 +142,98 @@ main {
 
 .section-wide {
   max-width: 1100px;
+}
+
+.cv-header {
+  display: flex;
+  gap: 18px 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cv-meta {
+  color: var(--muted);
+  margin: 6px 0;
+}
+
+.cv-lead {
+  color: var(--muted);
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.cv-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cv-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.cv-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 18px;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cv-card h3 {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.cv-card-span {
+  grid-column: span 2;
+}
+
+.cv-role {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cv-role + .cv-role {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-top: 8px;
+}
+
+.cv-role-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.cv-role-title {
+  font-weight: 700;
+}
+
+.cv-role-meta {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.cv-list {
+  margin-left: 16px;
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+}
+
+.cv-note {
+  color: var(--muted);
 }
 
 .video-card {
@@ -345,6 +443,10 @@ main {
   .project-banner {
     flex-direction: column;
     gap: 12px;
+  }
+
+  .cv-card-span {
+    grid-column: span 1;
   }
 }
 

@@ -113,7 +113,8 @@ main {
   margin: 0 auto;
   min-height: calc(100vh - 120px);
   justify-content: center;
-  gap: 18px;
+  /* gap: 18px; */
+  padding-top: 40px;
 }
 
 .section h1 {

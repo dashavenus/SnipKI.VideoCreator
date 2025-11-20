@@ -98,12 +98,15 @@ main {
 }
 
 .section {
-  max-width: 960px;
+  width: min(1100px, 92vw);
   margin: 80px auto;
   padding: 0 20px;
-  text-align: left;
+  text-align: center;
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .section h1 {
@@ -120,6 +123,7 @@ main {
 .section-lead {
   font-size: 18px;
   max-width: 680px;
+  text-align: left;
 }
 
 .section-wide {
@@ -172,9 +176,17 @@ main {
 
 .project-banner {
   display: flex;
-  gap: 24px;
-  align-items: flex-start;
+  gap: 28px;
+  align-items: center;
   justify-content: space-between;
+  flex-wrap: nowrap;
+  text-align: left;
+  width: 100%;
+}
+
+.project-copy {
+  max-width: 560px;
+  text-align: left;
 }
 
 .side-characters {
@@ -213,6 +225,19 @@ main {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-hero-img {
+  width: min(480px, 42vw);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: #000;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.project-hero {
+  margin-left: auto;
 }
 
 .pill {
@@ -238,6 +263,7 @@ main {
   border-radius: 16px;
   padding: 22px;
   line-height: 1.6;
+  text-align: center;
 }
 
 .panel h3 {
@@ -254,6 +280,8 @@ main {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  width: 100%;
+  justify-items: center;
 }
 
 .gallery-card {
@@ -281,6 +309,7 @@ main {
 .gallery-card figcaption {
   color: var(--muted);
   font-size: 14px;
+  text-align: center;
 }
 
 .note {
@@ -308,5 +337,25 @@ main {
 @media (max-width: 768px) {
   .side-characters {
     display: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .project-banner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-copy {
+    text-align: center;
+  }
+
+  .section-lead {
+    text-align: center;
+  }
+
+  .project-hero {
+    margin-left: 0;
   }
 }

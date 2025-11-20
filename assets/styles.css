@@ -175,6 +175,10 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
+.cv-card.skills {
+  height: 100%;
+}
+
 .cv-card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -234,6 +238,37 @@ main {
 
 .cv-note {
   color: var(--muted);
+}
+
+@media (min-width: 960px) {
+  .cv-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    grid-auto-rows: minmax(0, auto);
+    grid-template-areas:
+      "experience experience"
+      "personal skills"
+      "education skills";
+  }
+
+  .experience {
+    grid-area: experience;
+  }
+
+  .education {
+    grid-area: education;
+  }
+
+  .personal {
+    grid-area: personal;
+  }
+
+  .skills {
+    grid-area: skills;
+  }
+
+  .cv-card-span {
+    grid-column: auto;
+  }
 }
 
 .video-card {

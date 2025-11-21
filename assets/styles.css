@@ -216,6 +216,10 @@ main {
   align-items: flex-start;
 }
 
+.cv-intro {
+  flex: 1 1 460px;
+}
+
 .cv-meta {
   color: var(--muted);
   margin: 6px 0;
@@ -227,10 +231,28 @@ main {
   line-height: 1.6;
 }
 
+.cv-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+  flex: 0 0 260px;
+}
+
+.cv-photo {
+  width: min(260px, 32vw);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  object-fit: cover;
+  background: #000;
+}
+
 .cv-badges {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .cv-grid {
